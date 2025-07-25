@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typography Mastery - Complete Guide to Web Typography</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Roboto+Mono:wght@300;400;500&family=Poppins:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&family=Open+Sans:wght@300;400;600;700&display=swap');
+        
+        body { font-family: 'Inter', sans-serif; }
+        
+        /* Font family examples */
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .font-sans { font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'Roboto Mono', monospace; }
+        .font-poppins { font-family: 'Poppins', sans-serif; }
+        .font-merriweather { font-family: 'Merriweather', serif; }
+        .font-opensans { font-family: 'Open Sans', sans-serif; }
+        
+        /* Typography examples */
+        .text-display { font-size: 4rem; line-height: 1.1; font-weight: 800; }
+        .text-headline { font-size: 2.5rem; line-height: 1.2; font-weight: 700; }
+        .text-title { font-size: 1.5rem; line-height: 1.3; font-weight: 600; }
+        .text-body { font-size: 1rem; line-height: 1.6; font-weight: 400; }
+        .text-caption { font-size: 0.875rem; line-height: 1.4; font-weight: 400; }
+        
+        /* Interactive examples */
+        .typography-demo {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .typography-demo:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        /* Custom animations */
+        @keyframes fadeInUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .fade-in { animation: fadeInUp 0.8s ease-out; }
+        
+        /* Gradient backgrounds */
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .gradient-text { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Code styling */
+        .code-block {
+            background: #1e293b;
+            border-radius: 12px;
+            padding: 1.5rem;
+            overflow-x: auto;
+            font-family: 'Roboto Mono', monospace;
+        }
+        
+        /* Typography scale visualization */
+        .scale-demo {
+            border-left: 4px solid #3b82f6;
+            padding-left: 1rem;
+            margin: 1rem 0;
+        }
+        
+        /* Reading experience examples */
+        .reading-narrow { max-width: 45ch; }
+        .reading-wide { max-width: 75ch; }
+        .reading-optimal { max-width: 65ch; }
+        
+        /* Contrast examples */
+        .contrast-poor { color: #999; background: #f0f0f0; }
+        .contrast-good { color: #333; background: #fff; }
+        .contrast-excellent { color: #000; background: #fff; }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="gradient-bg text-white shadow-xl sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-4xl font-bold font-serif">Typography Mastery</h1>
+                    <p class="text-blue-100 mt-2">The Complete Guide to Web Typography</p>
+                </div>
+                <nav class="hidden md:flex space-x-6">
+                    <button onclick="scrollToSection('basics')" class="hover:text-blue-200 transition-colors">Basics</button>
+                    <button onclick="scrollToSection('fonts')" class="hover:text-blue-200 transition-colors">Fonts</button>
+                    <button onclick="scrollToSection('hierarchy')" class="hover:text-blue-200 transition-colors">Hierarchy</button>
+                    <button onclick="scrollToSection('spacing')" class="hover:text-blue-200 transition-colors">Spacing</button>
+                    <button onclick="scrollToSection('readability')" class="hover:text-blue-200 transition-colors">Readability</button>
+                    <button onclick="scrollToSection('examples')" class="hover:text-blue-200 transition-colors">Examples</button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-20 bg-gradient-to-br from-blue-50 to-indigo-100">
+        <div class="container mx-auto px-6 text-center">
+            <div class="fade-in">
+                <h2 class="text-display gradient-text mb-6">Beautiful Typography</h2>
+                <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">Typography is the art and technique of arranging type to make written language legible, readable, and appealing. Master the fundamentals and advanced techniques of web typography.</p>
+                <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                    <div class="text-center">
+                        <div class="text-6xl font-serif mb-4">Aa</div>
+                        <p class="font-semibold">Typefaces</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-6xl font-bold mb-4">123</div>
+                        <p class="font-semibold">Hierarchy</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-6xl mb-4">📖</div>
+                        <p class="font-semibold">Readability</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+        <!-- Typography Basics -->
+        <section id="basics" class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Typography Fundamentals</h2>
+                <p class="text-xl text-gray-600">Understanding the building blocks of great typography</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div class="bg-white rounded-xl shadow-lg p-8 typography-demo">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">What is Typography?</h3>
+                    <div class="space-y-4 text-gray-600">
+                        <p>Typography is the visual component of the written word. It involves:</p>
+                        <ul class="list-disc list-inside space-y-2 ml-4">
+                            <li><strong>Typeface selection:</strong> Choosing appropriate fonts</li>
+                            <li><strong>Hierarchy:</strong> Creating visual order and importance</li>
+                            <li><strong>Spacing:</strong> Managing white space and letter spacing</li>
+                            <li><strong>Readability:</strong> Ensuring text is easy to read</li>
+                            <li><strong>Mood & tone:</strong> Conveying emotion through type</li>
+                        </ul>
+                        <p>Good typography enhances communication and creates better user experiences.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-8 typography-demo">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Key Typography Terms</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">Typeface vs Font</h4>
+                            <p class="text-gray-600 text-sm">Typeface is the design (Helvetica), Font is the file (Helvetica Bold 16px)</p>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">Kerning</h4>
+                            <p class="text-gray-600 text-sm">Adjusting space between individual letter pairs</p>
+                        </div>
+                        <div class="border-l-4 border-purple-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">Leading</h4>
+                            <p class="text-gray-600 text-sm">Vertical space between lines of text (line-height in CSS)</p>
+                        </div>
+                        <div class="border-l-4 border-red-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">Tracking</h4>
+                            <p class="text-gray-600 text-sm">Overall spacing between all letters in a word or line</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Font Categories -->
+        <section id="fonts" class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Font Categories & Selection</h2>
+                <p class="text-xl text-gray-600">Understanding different typeface classifications and when to use them</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <!-- Serif -->
+                <div class="bg-white rounded-xl shadow-lg p-8 typography-demo">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl font-serif text-gray-800 mb-4">Aa</div>
+                        <h3 class="text-xl font-bold text-gray-800">Serif</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <p class="text-gray-600 text-sm">Traditional typefaces with small decorative strokes (serifs) at the end of letter strokes.</p>
+                        <div class="bg-gray-50 p-3 rounded">
+                            <p class="font-serif text-lg">The quick brown fox jumps over the lazy dog.</p>
+                        </div>
+                        <div class="text-xs text-gray-500">
+                            <strong>Best for:</strong> Body text, traditional designs, print materials
+                        </div>
+                        <div class="text-xs text-gray-500">
+                            <strong>Examples:</strong> Times New Roman, Georgia, Playfair Display
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sans-Serif -->
+                <div class="bg-white rounded-xl shadow-lg p-8 typography-demo">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl font-sans text-gray-800 mb-4">Aa</div>
+                        <h3 class="text-xl font-bold text-gray-800">Sans-Serif</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <p class="text-gray-600 text-sm">Clean, modern typefaces without decorative strokes. "Sans" means "without" in French.</p>
+                        <div class="bg-gray-50 p-3 rounded">
+                            <p class="font-sans text-lg">The quick brown fox jumps over the lazy dog.</p>
+                        </div>
+                        <div class="text-xs text-gray-500">
+                            <strong>Best for:</strong> Digital screens, modern designs, UI elements
+                        </div>
+                        <div class="text-xs text-gray-500">
+                            <strong>Examples:</strong> Helvetica, Arial, Inter, Poppins
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Monospace -->
+                <div class="bg-white rounded-xl shadow-lg p-8 typography-demo">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl font-mono text-gray-800 mb-4">Aa</div>
+                        <h3 class="text-xl font-bold text-gray-800">Monospace</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <p class="text-gray-600 text-sm">Fixed-width fonts where each character occupies the same horizontal space.</p>
+                        <div class="bg-gray-50 p-3 rounded">
+                            <p class="font-mono text-lg">The quick brown fox jumps over the lazy dog.</p>
+                        </div>
+                        <div class="text-xs text-gray-500">
+                            <strong>Best for:</strong> Code, data tables, technical content
+                        </div>
+                        <div class="text-xs text-gray-500">
+                            <strong>Examples:</strong> Courier, Monaco, Roboto Mono
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Font Pairing -->
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6">Font Pairing Examples</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="border-l-4 border-blue-500 pl-6">
+                        <h4 class="text-2xl font-serif font-bold text-gray-800 mb-2">Playfair Display</h4>
+                        <p class="font-sans text-gray-600">Paired with Inter for a classic yet modern combination. The serif headline creates elegance while the sans-serif body ensures readability.</p>
+                    </div>
+                    <div class="border-l-4 border-green-500 pl-6">
+                        <h4 class="text-2xl font-poppins font-bold text-gray-800 mb-2">Poppins</h4>
+                        <p class="font-merriweather text-gray-600">Combined with Merriweather creates a friendly, approachable feel. The geometric sans-serif headlines with serif body text work beautifully together.</p>
+                    </div>
+                </div>
+                <div class="mt-6 bg-blue-50 p-4 rounded-lg">
+                    <p class="text-sm text-blue-800"><strong>Pairing Tip:</strong> Combine fonts with contrasting characteristics but similar proportions. Avoid pairing fonts that are too similar or compete for attention.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Typography Hierarchy -->
+        <section id="hierarchy" class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Typography Hierarchy</h2>
+                <p class="text-xl text-gray-600">Creating visual order and guiding readers through your content</p>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6">Typography Scale</h3>
+                <div class="space-y-6">
+                    <div class="scale-demo">
+                        <h1 class="text-display font-bold text-gray-800">Display Text</h1>
+                        <p class="text-sm text-gray-500 mt-1">64px • Used for hero sections and major headlines</p>
+                    </div>
+                    <div class="scale-demo">
+                        <h2 class="text-headline font-bold text-gray-800">Headline</h2>
+                        <p class="text-sm text-gray-500 mt-1">40px • Section headers and important titles</p>
+                    </div>
+                    <div class="scale-demo">
+                        <h3 class="text-title font-semibold text-gray-800">Title</h3>
+                        <p class="text-sm text-gray-500 mt-1">24px • Subsection headers and card titles</p>
+                    </div>
+                    <div class="scale-demo">
+                        <p class="text-body text-gray-800">Body Text</p>
+                        <p class="text-sm text-gray-500 mt-1">16px • Main content and paragraph text</p>
+                    </div>
+                    <div class="scale-demo">
+                        <p class="text-caption text-gray-600">Caption Text</p>
+                        <p class="text-sm text-gray-500 mt-1">14px • Supporting information and metadata</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Creating Hierarchy</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <span class="text-white text-sm font-bold">1</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Size</h4>
+                                <p class="text-sm text-gray-600">Larger text naturally draws more attention</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <span class="text-white text-sm font-bold">2</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Weight</h4>
+                                <p class="text-sm text-gray-600">Bold text stands out from regular weight</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <span class="text-white text-sm font-bold">3</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Color</h4>
+                                <p class="text-sm text-gray-600">Contrast and color create emphasis</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <span class="text-white text-sm font-bold">4</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Spacing</h4>
+                                <p class="text-sm text-gray-600">White space creates separation and importance</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Hierarchy in Action</h3>
+                    <div class="space-y-4">
+                        <h1 class="text-3xl font-bold text-gray-800">Main Article Title</h1>
+                        <p class="text-gray-500 text-sm">Published on March 15, 2024</p>
+                        <h2 class="text-xl font-semibold text-gray-800 mt-6">Section Heading</h2>
+                        <p class="text-gray-600 leading-relaxed">This is body text that provides the main content. Notice how the hierarchy guides your eye from the title, to the date, to the section heading, and finally to this paragraph.</p>
+                        <h3 class="text-lg font-medium text-gray-800 mt-4">Subsection</h3>
+                        <p class="text-gray-600 leading-relaxed">Smaller headings create further organization within sections.</p>
+                        <p class="text-sm text-gray-500 mt-4">Caption or metadata text appears smaller and less prominent.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Spacing & Layout -->
+        <section id="spacing" class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Spacing & Layout</h2>
+                <p class="text-xl text-gray-600">The invisible foundation of great typography</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Line Height -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Line Height (Leading)</h3>
+                    <div class="space-y-6">
+                        <div class="border border-red-200 p-4 rounded">
+                            <h4 class="text-sm font-semibold text-red-600 mb-2">Too Tight (1.2)</h4>
+                            <p style="line-height: 1.2;" class="text-gray-700">This text has very tight line spacing which makes it difficult to read. The lines feel cramped and your eye has trouble following from one line to the next.</p>
+                        </div>
+                        <div class="border border-green-200 p-4 rounded">
+                            <h4 class="text-sm font-semibold text-green-600 mb-2">Just Right (1.6)</h4>
+                            <p style="line-height: 1.6;" class="text-gray-700">This text has optimal line spacing that creates a comfortable reading experience. There's enough space between lines to guide the eye naturally.</p>
+                        </div>
+                        <div class="border border-yellow-200 p-4 rounded">
+                            <h4 class="text-sm font-semibold text-yellow-600 mb-2">Too Loose (2.2)</h4>
+                            <p style="line-height: 2.2;" class="text-gray-700">This text has too much line spacing which breaks the connection between lines and makes reading feel disjointed and slow.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Letter Spacing -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Letter Spacing (Tracking)</h3>
+                    <div class="space-y-6">
+                        <div class="border border-gray-200 p-4 rounded">
+                            <h4 class="text-sm font-semibold text-gray-600 mb-2">Tight (-0.02em)</h4>
+                            <p style="letter-spacing: -0.02em;" class="text-gray-700 text-lg">Tighter letter spacing</p>
+                        </div>
+                        <div class="border border-gray-200 p-4 rounded">
+                            <h4 class="text-sm font-semibold text-gray-600 mb-2">Normal (0em)</h4>
+                            <p style="letter-spacing: 0em;" class="text-gray-700 text-lg">Normal letter spacing</p>
+                        </div>
+                        <div class="border border-gray-200 p-4 rounded">
+                            <h4 class="text-sm font-semibold text-gray-600 mb-2">Loose (0.1em)</h4>
+                            <p style="letter-spacing: 0.1em;" class="text-gray-700 text-lg">Looser letter spacing</p>
+                        </div>
+                        <div class="border border-gray-200 p-4 rounded">
+                            <h4 class="text-sm font-semibold text-gray-600 mb-2">Very Loose (0.2em)</h4>
+                            <p style="letter-spacing: 0.2em;" class="text-gray-700 text-lg">V E R Y   L O O S E</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CSS Properties -->
+            <div class="mt-12 bg-white rounded-xl shadow-lg p-8">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6">CSS Typography Properties</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="code-block">
+                        <pre><code class="text-white"><span class="text-green-400">/* Font Properties */</span>
+<span class="text-blue-400">font-family</span>: <span class="text-yellow-400">'Inter', sans-serif</span>;
+<span class="text-blue-400">font-size</span>: <span class="text-yellow-400">16px</span>;
+<span class="text-blue-400">font-weight</span>: <span class="text-yellow-400">400</span>;
+<span class="text-blue-400">font-style</span>: <span class="text-yellow-400">normal</span>;
+
+<span class="text-green-400">/* Spacing Properties */</span>
+<span class="text-blue-400">line-height</span>: <span class="text-yellow-400">1.6</span>;
+<span class="text-blue-400">letter-spacing</span>: <span class="text-yellow-400">0.02em</span>;
+<span class="text-blue-400">word-spacing</span>: <span class="text-yellow-400">0.1em</span>;</code></pre>
+                    </div>
+                    <div class="code-block">
+                        <pre><code class="text-white"><span class="text-green-400">/* Text Properties */</span>
+<span class="text-blue-400">text-align</span>: <span class="text-yellow-400">left</span>;
+<span class="text-blue-400">text-decoration</span>: <span class="text-yellow-400">none</span>;
+<span class="text-blue-400">text-transform</span>: <span class="text-yellow-400">none</span>;
+<span class="text-blue-400">color</span>: <span class="text-yellow-400">#333333</span>;
+
+<span class="text-green-400">/* Advanced Properties */</span>
+<span class="text-blue-400">text-rendering</span>: <span class="text-yellow-400">optimizeLegibility</span>;
+<span class="text-blue-400">-webkit-font-smoothing</span>: <span class="text-yellow-400">antialiased</span>;</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Readability & Accessibility -->
+        <section id="readability" class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Readability & Accessibility</h2>
+                <p class="text-xl text-gray-600">Making your typography accessible to everyone</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contrast -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Color Contrast</h3>
+                    <div class="space-y-4">
+                        <div class="contrast-poor p-4 rounded border">
+                            <h4 class="font-semibold mb-2">Poor Contrast (Fail)</h4>
+                            <p class="text-sm">This text is hard to read due to insufficient contrast between text and background colors.</p>
+                        </div>
+                        <div class="contrast-good p-4 rounded border">
+                            <h4 class="font-semibold mb-2">Good Contrast (AA)</h4>
+                            <p class="text-sm">This text meets WCAG AA standards with a contrast ratio of at least 4.5:1 for normal text.</p>
+                        </div>
+                        <div class="contrast-excellent p-4 rounded border">
+                            <h4 class="font-semibold mb-2">Excellent Contrast (AAA)</h4>
+                            <p class="text-sm">This text exceeds accessibility standards with a contrast ratio of at least 7:1 for enhanced readability.</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 bg-blue-50 p-4 rounded-lg">
+                        <p class="text-sm text-blue-800"><strong>Tip:</strong> Use tools like WebAIM's contrast checker to verify your color combinations meet accessibility standards.</p>
+                    </div>
+                </div>
+
+                <!-- Line Length -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Optimal Line Length</h3>
+                    <div class="space-y-6">
+                        <div class="border border-red-200 p-4 rounded">
+                            <h4 class="text-sm font-semibold text-red-600 mb-2">Too Narrow (35 characters)</h4>
+                            <p class="reading-narrow text-gray-700">This line length is too narrow and creates too many line breaks, making reading choppy and inefficient.</p>
+                        </div>
+                        <div class="border border-green-200 p-4 rounded">
+                            <h4 class="text-sm font-semibold text-green-600 mb-2">Optimal (45-75 characters)</h4>
+                            <p class="reading-optimal text-gray-700">This line length is optimal for reading comfort. It allows the eye to scan efficiently without losing track of the next line. Most typography experts recommend 45-75 characters per line.</p>
+                        </div>
+                        <div class="border border-yellow-200 p-4 rounded">
+                            <h4 class="text-sm font-semibold text-yellow-600 mb-2">Too Wide (100+ characters)</h4>
+                            <p class="reading-wide text-gray-700">This line length is too wide and makes it difficult for readers to track from the end of one line to the beginning of the next. Long lines tire the eye and reduce reading comprehension, especially on larger screens where text can stretch across the entire viewport.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accessibility Checklist -->
+            <div class="mt-12 bg-white rounded-xl shadow-lg p-8">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6">Typography Accessibility Checklist</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-3 mt-1">
+                                <span class="text-white text-xs">✓</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Sufficient Contrast</h4>
+                                <p class="text-sm text-gray-600">Minimum 4.5:1 for normal text, 3:1 for large text</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-3 mt-1">
+                                <span class="text-white text-xs">✓</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Readable Font Size</h4>
+                                <p class="text-sm text-gray-600">Minimum 16px for body text on web</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-3 mt-1">
+                                <span class="text-white text-xs">✓</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Proper Line Height</h4>
+                                <p class="text-sm text-gray-600">1.4-1.6 for body text, adjust for font size</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-3 mt-1">
+                                <span class="text-white text-xs">✓</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Optimal Line Length</h4>
+                                <p class="text-sm text-gray-600">45-75 characters per line for comfortable reading</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-3 mt-1">
+                                <span class="text-white text-xs">✓</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Clear Hierarchy</h4>
+                                <p class="text-sm text-gray-600">Logical heading structure (H1, H2, H3, etc.)</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-3 mt-1">
+                                <span class="text-white text-xs">✓</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Responsive Design</h4>
+                                <p class="text-sm text-gray-600">Text scales appropriately on all devices</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Examples -->
+        <section id="examples" class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Interactive Typography Examples</h2>
+                <p class="text-xl text-gray-600">Experiment with different typography settings</p>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <!-- Controls -->
+                    <div class="space-y-6">
+                        <h3 class="text-xl font-bold text-gray-800">Typography Controls</h3>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Font Family</label>
+                            <select id="fontFamily" onchange="updateTypography()" class="w-full p-2 border border-gray-300 rounded-lg">
+                                <option value="font-sans">Inter (Sans-serif)</option>
+                                <option value="font-serif">Playfair Display (Serif)</option>
+                                <option value="font-mono">Roboto Mono (Monospace)</option>
+                                <option value="font-poppins">Poppins (Sans-serif)</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Font Size</label>
+                            <input type="range" id="fontSize" min="12" max="24" value="16" onchange="updateTypography()" class="w-full">
+                            <span id="fontSizeValue" class="text-sm text-gray-500">16px</span>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Line Height</label>
+                            <input type="range" id="lineHeight" min="1" max="2.5" step="0.1" value="1.6" onchange="updateTypography()" class="w-full">
+                            <span id="lineHeightValue" class="text-sm text-gray-500">1.6</span>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Letter Spacing</label>
+                            <input type="range" id="letterSpacing" min="-0.05" max="0.2" step="0.01" value="0" onchange="updateTypography()" class="w-full">
+                            <span id="letterSpacingValue" class="text-sm text-gray-500">0em</span>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Font Weight</label>
+                            <select id="fontWeight" onchange="updateTypography()" class="w-full p-2 border border-gray-300 rounded-lg">
+                                <option value="300">Light (300)</option>
+                                <option value="400" selected>Regular (400)</option>
+                                <option value="500">Medium (500)</option>
+                                <option value="600">Semibold (600)</option>
+                                <option value="700">Bold (700)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Preview -->
+                    <div class="lg:col-span-2">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Live Preview</h3>
+                        <div class="border border-gray-200 rounded-lg p-6 bg-gray-50">
+                            <div id="typographyPreview">
+                                <h1 class="text-2xl font-bold mb-4">Typography in Action</h1>
+                                <p class="mb-4">Typography is the art and technique of arranging type to make written language legible, readable, and appealing when displayed. The arrangement of type involves selecting typefaces, point sizes, line lengths, line-spacing, and letter-spacing, and adjusting the space between pairs of letters.</p>
+                                <p class="mb-4">Good typography enhances the reading experience and helps communicate your message effectively. It creates hierarchy, establishes mood, and guides the reader's eye through your content.</p>
+                                <h2 class="text-xl font-semibold mb-2">Key Principles</h2>
+                                <ul class="list-disc list-inside space-y-1">
+                                    <li>Readability comes first</li>
+                                    <li>Establish clear hierarchy</li>
+                                    <li>Use appropriate spacing</li>
+                                    <li>Consider your audience</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 bg-blue-50 p-4 rounded-lg">
+                            <p class="text-sm text-blue-800"><strong>Try it:</strong> Adjust the controls on the left to see how different typography settings affect readability and visual appeal.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Typography in Practice -->
+        <section class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Typography in Practice</h2>
+                <p class="text-xl text-gray-600">Real-world examples of effective typography</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Blog Post Example -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-6">
+                        <h3 class="text-xl font-bold">Blog Post Layout</h3>
+                        <p class="text-blue-100 text-sm mt-1">Optimized for reading</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-2 text-sm text-gray-500">Technology • March 15, 2024</div>
+                        <h1 class="text-2xl font-bold text-gray-800 mb-4 leading-tight">The Future of Web Development</h1>
+                        <p class="text-gray-600 leading-relaxed mb-4">Web development continues to evolve at a rapid pace. New frameworks, tools, and methodologies emerge regularly, changing how we build and deploy applications.</p>
+                        <h2 class="text-xl font-semibold text-gray-800 mb-3">Key Trends</h2>
+                        <p class="text-gray-600 leading-relaxed mb-4">From serverless architecture to progressive web apps, developers have more options than ever before.</p>
+                        <div class="text-sm text-gray-500">5 min read • 1,234 words</div>
+                    </div>
+                </div>
+
+                <!-- Landing Page Example -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="bg-gradient-to-r from-green-500 to-teal-600 text-white p-6">
+                        <h3 class="text-xl font-bold">Landing Page</h3>
+                        <p class="text-green-100 text-sm mt-1">Conversion-focused design</p>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h1 class="text-3xl font-bold text-gray-800 mb-4">Build Better Websites</h1>
+                        <p class="text-xl text-gray-600 mb-6">The complete toolkit for modern web development</p>
+                        <button class="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-lg font-semibold mb-6 transition-colors">Get Started Free</button>
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div>
+                                <div class="text-2xl font-bold text-gray-800">50K+</div>
+                                <div class="text-sm text-gray-500">Users</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-gray-800">99.9%</div>
+                                <div class="text-sm text-gray-500">Uptime</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-gray-800">24/7</div>
+                                <div class="text-sm text-gray-500">Support</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Reference -->
+        <section class="mb-20">
+            <div class="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl shadow-lg text-white p-8">
+                <h2 class="text-3xl font-bold mb-6">Typography Quick Reference</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-3">Font Sizes</h3>
+                        <ul class="text-sm space-y-1 text-indigo-100">
+                            <li>• Body: 16px minimum</li>
+                            <li>• Small: 14px</li>
+                            <li>• Large: 18-20px</li>
+                            <li>• Headings: 24px+</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-3">Line Heights</h3>
+                        <ul class="text-sm space-y-1 text-indigo-100">
+                            <li>• Body text: 1.4-1.6</li>
+                            <li>• Headings: 1.1-1.3</li>
+                            <li>• Captions: 1.3-1.4</li>
+                            <li>• Code: 1.4-1.5</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-3">Contrast Ratios</h3>
+                        <ul class="text-sm space-y-1 text-indigo-100">
+                            <li>• Normal text: 4.5:1</li>
+                            <li>• Large text: 3:1</li>
+                            <li>• AAA standard: 7:1</li>
+                            <li>• UI elements: 3:1</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-3">Best Practices</h3>
+                        <ul class="text-sm space-y-1 text-indigo-100">
+                            <li>• 45-75 characters/line</li>
+                            <li>• Left-align body text</li>
+                            <li>• Limit font families</li>
+                            <li>• Test on devices</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-2xl font-bold mb-4 font-serif">Typography Mastery</h3>
+            <p class="text-gray-400 mb-6">Master the art of beautiful, readable typography</p>
+            <div class="flex justify-center space-x-6 text-sm">
+                <span>© 2024 Typography Guide</span>
+                <span>•</span>
+                <span>Made with ❤️ for designers and developers</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        function updateTypography() {
+            const preview = document.getElementById('typographyPreview');
+            const fontFamily = document.getElementById('fontFamily').value;
+            const fontSize = document.getElementById('fontSize').value;
+            const lineHeight = document.getElementById('lineHeight').value;
+            const letterSpacing = document.getElementById('letterSpacing').value;
+            const fontWeight = document.getElementById('fontWeight').value;
+
+            // Update display values
+            document.getElementById('fontSizeValue').textContent = fontSize + 'px';
+            document.getElementById('lineHeightValue').textContent = lineHeight;
+            document.getElementById('letterSpacingValue').textContent = letterSpacing + 'em';
+
+            // Apply styles
+            preview.className = fontFamily;
+            preview.style.fontSize = fontSize + 'px';
+            preview.style.lineHeight = lineHeight;
+            preview.style.letterSpacing = letterSpacing + 'em';
+            preview.style.fontWeight = fontWeight;
+        }
+
+        // Initialize typography preview
+        document.addEventListener('DOMContentLoaded', function() {
+            updateTypography();
+
+            // Add intersection observer for fade-in animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all sections for scroll animations
+            document.querySelectorAll('section').forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(section);
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'964bc346c14997a4',t:'MTc1MzQ0NzYxNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
